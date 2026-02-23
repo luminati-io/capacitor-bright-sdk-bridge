@@ -13,24 +13,70 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`currentChoice()`](#currentchoice)
+* [`version()`](#version)
+* [`uuid()`](#uuid)
+* [`optOut()`](#optout)
+* [`showConsent(...)`](#showconsent)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### currentChoice()
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+currentChoice() => Promise<{ value: number; }>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+**Returns:** <code>Promise&lt;{ value: number; }&gt;</code>
+
+--------------------
+
+
+### version()
+
+```typescript
+version() => Promise<{ value: string; }>
+```
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### uuid()
+
+```typescript
+uuid() => Promise<{ value?: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ value?: string; }&gt;</code>
+
+--------------------
+
+
+### optOut()
+
+```typescript
+optOut() => Promise<void>
+```
+
+--------------------
+
+
+### showConsent(...)
+
+```typescript
+showConsent(options?: { benefit?: string | undefined; agree_btn?: string | undefined; disagree_btn?: string | undefined; language?: string | undefined; } | undefined) => Promise<{ value: boolean; }>
+```
+
+| Param         | Type                                                                                             |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| **`options`** | <code>{ benefit?: string; agree_btn?: string; disagree_btn?: string; language?: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 --------------------
 

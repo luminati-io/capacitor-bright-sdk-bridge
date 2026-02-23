@@ -17,12 +17,12 @@ let package = Package(
             name: "BrightSdkBridgePlugin",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
-                .product(name: "Cordova", package: "capacitor-swift-pm")
+                .product(name: "Cordova", package: "capacitor-swift-pm"),
+                .target(name: "brdsdk"),
             ],
             path: "ios/Sources/BrightSdkBridgePlugin"),
-        .testTarget(
-            name: "BrightSdkBridgePluginTests",
-            dependencies: ["BrightSdkBridgePlugin"],
-            path: "ios/Tests/BrightSdkBridgePluginTests")
+        .binaryTarget(name: "brdsdk",
+                      url: "https://cdn.bright-sdk.com/static/bright_sdk_ios-1.605.415.zip",
+                      checksum: "51c8b861c87a248507a17480923fdec30d68fcfbee6f3faecab44525f4a07e9b"),
     ]
 )
